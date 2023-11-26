@@ -2,6 +2,40 @@ body {
   margin: 0;
   background-color: rgb(255, 255, 255);
 }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 50px;
+}
+.navbar {
+  position: fixed;
+  width: 100%;
+  background-color: rgb(0, 0, 107);
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar ul {
+  width: fit-content;
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  color: white;
+}
+
+.navbar li {
+  display: inline;
+  flex-direction: row;
+  margin-right: 10px;
+  font-size: 20px;
+
+}
+
+.navbar li a {
+  color: white;
+  text-decoration: none;
+  margin: 0 30px;
+}
 
 .background-container {
 
@@ -173,7 +207,8 @@ body {
   margin: 0 100px;
 
 }
-.technical-skill .text-container ul{
+
+.technical-skill .text-container ul {
 
   margin: 0 100px;
 
@@ -196,7 +231,8 @@ body {
   height: auto;
   width: auto;
 }
-.flashcard-container{
+
+.flashcard-container {
   padding: 50px;
   display: flex;
   justify-content: space-evenly;
@@ -204,7 +240,7 @@ body {
   margin-bottom: 100px;
 }
 
-.flashcard{
+.flashcard {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -214,8 +250,21 @@ body {
   width: auto;
   z-index: 0;
   margin: 0 10px;
+
 }
-.flashcard img{
+
+.hover:hover {
+  transition: 0.5s;
+  transform: translateY(-10px);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+.scale:hover {
+  transition: 0.5s;
+  transform: scale(1.1);
+}
+
+.flashcard img {
   height: 300px;
   width: 420px;
   position: absolute;
@@ -224,46 +273,54 @@ body {
   z-index: 1;
 
 }
-.flashcard-cover{
+
+.flashcard-cover {
   padding: 10px;
   position: relative;
-  top:80%;
+  top: 80%;
   background-color: rgb(238, 238, 238);
   z-index: 2;
   border-radius: 0 0 30px 30px;
 }
-.flashcard-content{
+
+.flashcard-content {
   z-index: 0;
   width: 400px;
 }
-.contact{
+
+.contact {
   height: 100vh;
   width: auto;
   background-color: rgb(1, 0, 88);
- padding-top: 50px;
+  padding-top: 50px;
 }
-.contact h1{
+
+.contact h1 {
   color: white;
   font-size: 90px;
 }
+
 .contact .text {
   margin: 10px;
-width: 800px;
-text-align: center;
+  width: 800px;
+  text-align: center;
 }
-.contact .text p{
+
+.contact .text p {
   color: white;
   font-size: 20px;
   margin: 0;
   margin: 10px;
 
 }
-.form-group{
+
+.form-group {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.form-group input{
+
+.form-group input {
   width: 700px;
   height: 10px;
 
@@ -272,12 +329,14 @@ text-align: center;
   padding: 10px;
 
 }
-.form-group label{
+
+.form-group label {
   color: white;
   font-size: 20px;
   margin: 10px;
 }
-.form-group textarea{
+
+.form-group textarea {
   width: 700px;
   height: 100px;
   border-radius: 10px;
@@ -285,9 +344,10 @@ text-align: center;
   margin: 10px;
   padding: 10px;
 }
-.form button{
+
+.form button {
   transform: translateX(620%);
-  
+
   width: 100px;
   height: 40px;
   border-radius: 10px;

@@ -45,7 +45,7 @@ const cards = [
 ];
 const Flashcard = ({ card }) => {
   return (
-    <div className='flashcard'>
+    <div className='flashcard hover'>
       <div className='flashcard-img'>
         <img src={card.img} alt='SYF' />
       </div>
@@ -64,7 +64,7 @@ const SocialList = ({ link }) => {
   return (
     <li>
       <a href={link.link}>
-        <img src={link.icon} alt={link.name} title={link.name} />
+        <img className='scale' src={link.icon} alt={link.name} title={link.name} />
       </a>
     </li>
   )
@@ -72,13 +72,14 @@ const SocialList = ({ link }) => {
 }
 
 const App = () => {
-
+  
+  
   const [inputNameValue, setInputNameValue] = useState('Anomymous');
   const [inputEmailValue, setInputEmailValue] = useState('none');
   const [inputMessageValue, setInputMessageValue] = useState('empty');
 
   function handleSubmit() {
-    
+
     fetch('https://discord.com/api/webhooks/1168144299515457586/DCK0W1gRUlN7fjodBYPM_UaJEMOvcPpDWtAoQSW0PmwHAxfYDWhGPNeqmRJiw0FWNkKc', {
       method: 'POST',
       headers: {
@@ -95,12 +96,20 @@ const App = () => {
       .catch((error) => {
         console.error(error);
       });
-      alert('Your message has been sent!');
+    alert('Your message has been sent!');
   };
   return (
     <div>
-
-      <div className="info">
+      <div className='navbar'>
+        <ul>
+          <li><a href='#home'>Home</a></li>
+          <li><a href='#aboutme'>About Me</a></li>
+          <li><a href='#technical-skill'>Technical Skills</a></li>
+          <li><a href='#personal-project'>Personal Projects</a></li>
+          <li><a href='#contact'>Contact</a></li>
+        </ul>
+      </div>
+      <div id='home' className="info">
         <div className="background-container">
           <div className='filter'></div>
           <img className='background-img' src={background} alt="background" />
@@ -118,7 +127,7 @@ const App = () => {
         </div>
       </div>
 
-      <div className="aboutme">
+      <div id='aboutme'className="aboutme">
         <div className='aboutme-title'>
           <h1>ABOUT ME</h1>
           <div className='line' />
@@ -155,18 +164,18 @@ const App = () => {
 
 
       </div>
-      <div className='technical-skill'>
+      <div id='technical-skill' className='technical-skill'>
         <div className='aboutme-title'>
           <h1>TECHNICAL SKILLS</h1>
           <div className='line' />
         </div>
         <div className='img-container'>
-          <img src='https://cdn-icons-png.flaticon.com/512/5968/5968292.png' alt='JavaScript' />
-          <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1150px-React-icon.svg.png' alt='React' />
-          <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/2560px-Node.js_logo.svg.png' alt='Node.js' />
-          <img src='https://cdn.icon-icons.com/icons2/2415/PNG/512/csharp_original_logo_icon_146578.png' alt='C#' />
-          <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Microsoft_.NET_logo.svg/2048px-Microsoft_.NET_logo.svg.png' alt='.NET' />
-          <img src='https://cdn4.iconfinder.com/data/icons/logos-brands-5/24/unity-512.png' alt='Unity' />
+          <img className='scale' src='https://cdn-icons-png.flaticon.com/512/5968/5968292.png' alt='JavaScript' />
+          <img className='scale' src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1150px-React-icon.svg.png' alt='React' />
+          <img className='scale' src='https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/2560px-Node.js_logo.svg.png' alt='Node.js' />
+          <img className='scale' src='https://cdn.icon-icons.com/icons2/2415/PNG/512/csharp_original_logo_icon_146578.png' alt='C#' />
+          <img className='scale' src='https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Microsoft_.NET_logo.svg/2048px-Microsoft_.NET_logo.svg.png' alt='.NET' />
+          <img className='scale' src='https://cdn4.iconfinder.com/data/icons/logos-brands-5/24/unity-512.png' alt='Unity' />
         </div>
         <div className='text-container'>
           <div className='text'>
@@ -189,7 +198,7 @@ const App = () => {
 
         </div>
       </div>
-      <div className='personal-project'>
+      <div id="personal-project" className='personal-project'>
         <div className='aboutme-title'>
           <h1>PERSONAL PROJECTS</h1>
           <div className='line' />
@@ -198,7 +207,7 @@ const App = () => {
           </div>
         </div>
       </div>
-      <div className='contact'>
+      <div id="contact" className='contact'>
         <div className='aboutme-title'>
           <h1>CONTACT</h1>
           <div className='line' />
@@ -212,15 +221,15 @@ const App = () => {
             <div>
               <div className='form-group'>
                 <label for='name'>Name</label>
-                <input type='text' id='name' onChange={(e)=>{setInputNameValue(e.target.value)}}/>
+                <input type='text' id='name' onChange={(e) => { setInputNameValue(e.target.value) }} />
               </div>
               <div className='form-group'>
                 <label for='email'>Email</label>
-                <input type='text' id='email' onChange={(e)=> {setInputEmailValue(e.target.value)}} />
+                <input type='text' id='email' onChange={(e) => { setInputEmailValue(e.target.value) }} />
               </div>
               <div className='form-group'>
                 <label for='message'>Message</label>
-                <textarea id='message'  onChange={(e)=>{setInputMessageValue(e.target.value)}}/>
+                <textarea id='message' onChange={(e) => { setInputMessageValue(e.target.value) }} />
               </div>
               <button onClick={() => handleSubmit()}>Send</button>
             </div>
